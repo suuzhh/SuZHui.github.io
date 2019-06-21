@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "suzh-blog",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "just a little blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "suzh <362680581@qq.com>",
   "dependencies": {
     "gatsby": "^2.9.6",
     "gatsby-image": "^2.1.4",
@@ -36,7 +36,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run serve",
     "serve": "gatsby develop",
