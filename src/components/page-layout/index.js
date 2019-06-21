@@ -1,12 +1,18 @@
 import React from 'react';
 import Header from '../header';
+import Container from '../container';
 
 
 function PageLayout({ children }) {
     return (
         <>
             <Header></Header>
-            <div>{ children }</div>
+
+            <div>
+                <Container>
+                    { children }
+                </Container>
+            </div>
         </>
     );
 }

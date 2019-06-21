@@ -1,3 +1,20 @@
+@import './theme.scss';
+
 html {
+    margin: 0;
     background-color: white;
+    font: 112.5%/1.45 'Open Sans',sans-serif;
+    font-size: $fontSize4;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    h1 { @include H(1); }
+    h2 { @include H(2); }
+    h3 { @include H(3); }
+    h4 { @include H(4); }
+    h5 { @include H(5); }
+    h6 { @include H(6); }
 }
+

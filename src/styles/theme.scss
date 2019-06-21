@@ -1,0 +1,45 @@
+$fontSize1: 34px;
+$fontSize2: 30px;
+$fontSize3: 26px;
+$fontSize4: 22px;
+$fontSize5: 18px;
+$fontSize6: 14px;
+
+$fontWeightS: 200;
+$fontWeightM: 400;
+$fontWeightL: 600;
+// 生成 h1 - h6标签样式
+@mixin headingTagGenerator($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin H($level: 1) {
+    @if $level > 2 && $level < 5 {
+        @include headingTagGenerator($level, $fontWeightM);
+    }
+    @if $level < 3 {
+        @include headingTagGenerator($level, $fontWeightS);
+    }
+    @if $level > 4 {
+        @include headingTagGenerator($level, $fontWeightL);
+    }
+}
+
+@mixin boxShadow {
+    box-shadow: 
+        0 0 6px rgba(0, 0, 0, 0.06),
+        0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+// flex 竖向布局
+@mixin flexVertical {
+    display: flex;
+    flex-direction: column;
+}
+
+// flex横向布局
+@mixin flexHorizontal {
+    display: flex;
+    flex-direction: row;
+}
