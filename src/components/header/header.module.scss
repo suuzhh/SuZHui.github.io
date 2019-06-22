@@ -12,4 +12,11 @@
     background-color: white;
     @include boxShadow;
     @include flexHorizontal;
+    
+    &-left {
+        
+    }
+    &-right {
+        
+    }
 }

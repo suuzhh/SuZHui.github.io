@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from 'gatsby';
-import PageLayout from '../components/page-layout';
+// import { Link } from "gatsby";
+import PageLayout from "../components/page-layout";
 
 const IndexPage = () => (
   <PageLayout>
@@ -8,7 +8,6 @@ const IndexPage = () => (
       <p>Just a little space</p>
     </div>
   </PageLayout>
-
-);
+)
 
 export default IndexPage;

@@ -1,0 +1,5 @@
+@import '../../styles/theme.scss';
+
+.search-input {
+    @include flexHorizontal;
+}
