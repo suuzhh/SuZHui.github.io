@@ -1,16 +1,15 @@
 import React from "react";
 import Container from "../container";
-import style from "./header.module.scss";
 import Icon, { ICON_SEARCH } from "../icon";
 
 function Header() {
   return (
-    <header className={style.header}>
-      <Container justify="space-between">
-        <div className={style.headerLeft}>
+    <header className='fixed top-0 left-0 right-0 w-100 z-9999 bg-white overflow-hidden shadow-2'>
+      <Container justify='space-between'>
+        <div className=''>
           <h2>Title</h2>
         </div>
-        <div className={style.headerRight}>
+        <div className=''>
           <button>
             <Icon name={ICON_SEARCH} />
           </button>

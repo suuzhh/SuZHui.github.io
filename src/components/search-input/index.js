@@ -9,7 +9,7 @@ function SearchInput() {
   return (
     <div className={style.searchInput}>
       <input
-        maxLength="30"
+        maxLength='30'
         className={`${style.input} ${isFocus ? style.inputFocus : ""}`}
         value={inputValue}
         onChange={e => setValue(e.target.value)}

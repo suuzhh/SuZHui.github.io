@@ -9,7 +9,9 @@ function Container({ children, direction = "row", justify = "start" }) {
   };
 
   return (
-    <div className={style.container} style={containerStyle}>
+    <div
+      className='center pa2 flex w-100 w-60-ns'
+      style={containerStyle}>
       {children}
     </div>
   );

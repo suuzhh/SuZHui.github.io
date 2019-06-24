@@ -3,7 +3,7 @@ import style from "./icon.module.scss";
 
 function Icon({ name = "", size = 22, color = "" }) {
   const iconStyle = {
-    fontSize: `${size}px`,
+    fontSize: size,
     color,
   };
 
