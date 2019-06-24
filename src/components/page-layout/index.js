@@ -9,7 +9,7 @@ function PageLayout({ children }) {
       <Header></Header>
 
       <div className={style.pageLayoutContent}>
-        <Container>{children}</Container>
+        <Container direction='column'>{children}</Container>
       </div>
     </>
   );

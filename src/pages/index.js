@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import PageLayout from "../components/page-layout";
 
 const IndexPage = ({ data }) => {
@@ -7,18 +7,24 @@ const IndexPage = ({ data }) => {
   const remarkList = data.allMarkdownRemark.edges;
   return (
     <PageLayout>
-      <div style={{ color: `purple` }}>
+      <>
         {remarkList.map(item => {
           const { id, frontmatter } = item.node;
           return (
-            <div key={id}>
-              <p>Title: {frontmatter.title}</p>
-              <p>Date: {frontmatter.date}</p>
-              <p>Path: {frontmatter.path}</p>
-            </div>
+            <Link
+              className='db link silver w-100 mb3 pv2 bb b--black-20 dim'
+              key={id}
+              to={frontmatter.path}
+            >
+                <div className='flex-ns justify-between items-center mb3'>
+                  <h4 className='orange f5'>{frontmatter.title}</h4>
+                  <span className='f7'>{frontmatter.date}</span>
+                </div>
+                <p className='f7'>{frontmatter.excerpt}</p>
+            </Link>
           );
         })}
-      </div>
+      </>
     </PageLayout>
   );
 };
