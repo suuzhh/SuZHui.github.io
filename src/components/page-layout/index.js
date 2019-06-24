@@ -1,20 +1,18 @@
-import React from 'react';
-import Header from '../header';
-import Container from '../container';
-
+import React from "react";
+import Header from "../header";
+import Container from "../container";
+import style from "./page-layout.module.scss";
 
 function PageLayout({ children }) {
-    return (
-        <>
-            <Header></Header>
+  return (
+    <>
+      <Header></Header>
 
-            <div>
-                <Container>
-                    { children }
-                </Container>
-            </div>
-        </>
-    );
+      <div className={style.pageLayoutContent}>
+        <Container>{children}</Container>
+      </div>
+    </>
+  );
 }
 
 export default PageLayout;

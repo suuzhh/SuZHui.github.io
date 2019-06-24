@@ -1,0 +1,27 @@
+@import '../../styles/global.scss';
+
+@font-face {
+    font-family: 'blog-icon';  /* project id 1257231 */
+    src: url('https://at.alicdn.com/t/font_1257231_c8768ngouaw.eot');
+    src: url('https://at.alicdn.com/t/font_1257231_c8768ngouaw.eot?#iefix') format('embedded-opentype'),
+    url('https://at.alicdn.com/t/font_1257231_c8768ngouaw.woff2') format('woff2'),
+    url('https://at.alicdn.com/t/font_1257231_c8768ngouaw.woff') format('woff'),
+    url('https://at.alicdn.com/t/font_1257231_c8768ngouaw.ttf') format('truetype'),
+    url('https://at.alicdn.com/t/font_1257231_c8768ngouaw.svg#blog-icon') format('svg');
+}
+
+.icon {
+    font-family:"blog-icon" !important;
+    // font-size: $fontSize4;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    // 查询
+    &.search {
+        &:before {
+            content: "\e6c8"
+        }
+    }
+}
+
