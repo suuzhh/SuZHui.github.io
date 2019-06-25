@@ -1,17 +1,21 @@
 import React from "react";
 import Header from "../header";
 import Container from "../container";
-import style from "./page-layout.module.scss";
 
 function PageLayout({ children }) {
+  const style = {
+    width: '100vw',
+    height: '100vh',
+    overflow: 'hidden',
+  }
   return (
-    <>
+    <div style={ style } className='flex flex-column'>
       <Header></Header>
 
-      <div className={style.pageLayoutContent}>
+      <div className='pv3 mt4 flex-auto overflow-y-scroll'>
         <Container direction='column'>{children}</Container>
       </div>
-    </>
+    </div>
   );
 }
 

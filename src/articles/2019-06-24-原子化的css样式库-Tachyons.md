@@ -1,5 +1,5 @@
 ---
-path: "/article/use-tachyons-in-react"
+path: "/article/use-tachyons-lib"
 date: "2019-06-24"
 title: "原子化的css样式库-Tachyons"
 excerpt: "在React中使用tachyons代替css module"
@@ -31,6 +31,7 @@ tachyons提供了极其细粒度的类，[[查看官方文档]](http://tachyons.
 #### 对应的样式
 
 - **f6** 参考[scale](http://tachyons.io/docs/typography/scale/),
+
 ```css
 /* Type Scale */
 .f1 { font-size: 3rem; }
@@ -42,6 +43,7 @@ tachyons提供了极其细粒度的类，[[查看官方文档]](http://tachyons.
 .f7 { font-size: .75rem; } /* Small and hard to read for many people so use with extreme caution */
 ```
 - **link** 参考[links](http://tachyons.io/docs/elements/links/)
+
 ```css
 /*
 
@@ -50,28 +52,29 @@ tachyons提供了极其细粒度的类，[[查看官方文档]](http://tachyons.
 
 */
 
-.link {
-  text-decoration: none;
-  transition: color .15s ease-in;
-}
+  .link {
+    text-decoration: none;
+    transition: color .15s ease-in;
+  }
 
-.link:link,
-.link:visited {
-  transition: color .15s ease-in;
-}
-.link:hover   {
-  transition: color .15s ease-in;
-}
-.link:active  {
-  transition: color .15s ease-in;
-}
-.link:focus   {
-  transition: color .15s ease-in;
-  outline: 1px dotted currentColor;
-}
+  .link:link,
+  .link:visited {
+    transition: color .15s ease-in;
+  }
+  .link:hover   {
+    transition: color .15s ease-in;
+  }
+  .link:active  {
+    transition: color .15s ease-in;
+  }
+  .link:focus   {
+    transition: color .15s ease-in;
+    outline: 1px dotted currentColor;
+  }
 ```
 
 - **dim** 参考[hovers](http://tachyons.io/docs/themes/hovers/)
+
 ```css
 /*
 
@@ -92,6 +95,7 @@ tachyons提供了极其细粒度的类，[[查看官方文档]](http://tachyons.
 }
 ```
 - **br3** 参考[border-radius](http://tachyons.io/docs/themes/border-radius/)
+
 ```css
 .br0 {        border-radius: 0; }
 .br1 {        border-radius: .125rem; }
@@ -118,6 +122,7 @@ tachyons提供了极其细粒度的类，[[查看官方文档]](http://tachyons.
 }
 ```
 - **pv3** 参考[spacing](http://tachyons.io/docs/layout/spacing/)
+
 ```css
 .pv0 {
   padding-top: var(--spacing-none);
@@ -155,6 +160,7 @@ tachyons提供了极其细粒度的类，[[查看官方文档]](http://tachyons.
 ```
 
 - **ph3** 参考[spacing](http://tachyons.io/docs/layout/spacing/)
+
 ```css
 .ph0 {
   padding-left: var(--spacing-none);
@@ -197,6 +203,7 @@ tachyons提供了极其细粒度的类，[[查看官方文档]](http://tachyons.
 }
 ```
 - **mb2** 参考[spacing](http://tachyons.io/docs/layout/spacing/) 
+
 ```css
 .mb0  {  margin-bottom: var(--spacing-none); }
 .mb1 {  margin-bottom: var(--spacing-extra-small); }
@@ -207,7 +214,9 @@ tachyons提供了极其细粒度的类，[[查看官方文档]](http://tachyons.
 .mb6 {  margin-bottom: var(--spacing-extra-extra-large); }
 .mb7 { margin-bottom: var(--spacing-extra-extra-extra-large); }
 ```
+
 - **dib** 参考[display](http://tachyons.io/docs/layout/display/)
+
 ```css
 .dn {              display: none; }
 .di {              display: inline; }
@@ -223,6 +232,7 @@ tachyons提供了极其细粒度的类，[[查看官方文档]](http://tachyons.
 ```
 
 - **white & bg-black** 参考[skins](http://tachyons.io/docs/themes/skins/)
+
 ```css
 .black {         color: var(--black); }
 .near-black {    color: var(--near-black); }

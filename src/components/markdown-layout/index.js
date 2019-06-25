@@ -1,10 +1,9 @@
 import React from "react";
-import style from "./markdown-layout.module.scss";
 
 function MarkdownLayout({ html = "" }) {
   return (
     <div
-      className={style.markdownLayout}
+      className='markdown-body w-100'
       dangerouslySetInnerHTML={{ __html: html }}
     ></div>
   );

@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
           const { id, frontmatter } = item.node;
           return (
             <Link
-              className='db link silver w-100 mb3 pv2 bb b--black-20 dim'
+              className='db link silver w-100 mb4 pv2 bb b--black-20'
               key={id}
               to={frontmatter.path}
             >
