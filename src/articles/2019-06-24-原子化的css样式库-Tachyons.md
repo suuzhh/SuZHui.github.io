@@ -5,7 +5,7 @@ title: "原子化的css样式库-Tachyons"
 excerpt: "在React中使用tachyons代替css module"
 ---
 
-> 在React编写组件化的css一直是令人头疼问题, 从css modules到JSS,再到styled-components, 大家一直在寻找最好的解决方案。
+> 在React编写组件化的css一直是令人头疼的问题, 从css modules到JSS,再到styled-components, 大家一直在寻找最好的解决方案。
 
 
 ## Tachyons

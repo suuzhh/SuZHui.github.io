@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import MarkdownLayout from "../components/markdown-layout";
 import PageLayout from "../components/page-layout";
 
@@ -8,9 +8,9 @@ export default function Template({ data }) {
   const { markdownRemark: post } = data;
   return (
     <PageLayout>
-        <Helmet title={`Your Blog Name -${post.frontmatter.title}`} />
-        <h1 className='f3'>{post.frontmatter.title}</h1>
-        <MarkdownLayout html={post.html} />
+      <Helmet title={`Your Blog Name -${post.frontmatter.title}`} />
+      <h1 className='f3 normal'>{post.frontmatter.title}</h1>
+      <MarkdownLayout html={post.html} />
     </PageLayout>
   );
 }

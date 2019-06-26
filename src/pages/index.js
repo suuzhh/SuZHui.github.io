@@ -12,15 +12,15 @@ const IndexPage = ({ data }) => {
           const { id, frontmatter } = item.node;
           return (
             <Link
-              className='db link silver w-100 mb4 pv2 bb b--black-20'
+              className='db link silver w-100 mb2 pv2 bb b--black-20'
               key={id}
               to={frontmatter.path}
             >
-                <div className='flex-ns justify-between items-center mb3'>
-                  <h4 className='orange f5'>{frontmatter.title}</h4>
-                  <span className='f7'>{frontmatter.date}</span>
-                </div>
-                <p className='f7'>{frontmatter.excerpt}</p>
+              <div className='flex-ns justify-between items-center mb2'>
+                <h4 className='orange f5'>{frontmatter.title}</h4>
+                <span className='f7'>{frontmatter.date}</span>
+              </div>
+              <p className='f7'>{frontmatter.excerpt}</p>
             </Link>
           );
         })}
