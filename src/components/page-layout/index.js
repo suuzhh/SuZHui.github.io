@@ -14,7 +14,7 @@ function PageLayout({ children }) {
 
   const handleHeaderVisible = (e) => {
     const distance = e.target.scrollTop;
-    if (distance > 100) {
+    if (distance > 70) {
       // Hide header
       headerRef.current && headerRef.current.hide();
     } else {
