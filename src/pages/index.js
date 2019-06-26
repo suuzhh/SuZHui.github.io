@@ -3,7 +3,6 @@ import { graphql, Link } from "gatsby";
 import PageLayout from "../components/page-layout";
 
 const IndexPage = ({ data }) => {
-  console.log(data);
   const remarkList = data.allMarkdownRemark.edges;
   return (
     <PageLayout>
