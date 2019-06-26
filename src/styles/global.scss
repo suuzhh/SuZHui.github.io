@@ -43,12 +43,12 @@ $scrollTopName: scroll-top;
 }
 
 .#{$scrollTopName}-enter-done {
-    transform: translateY(-100%);
+    transform: translateY(0);
 }
 
 .#{$scrollTopName}-enter-active {
     transform: translateY(0);
-    transition: transform 0.6s ease;
+    transition: transform 0.4s ease;
 }
 
 .#{$scrollTopName}-exit {
@@ -61,5 +61,5 @@ $scrollTopName: scroll-top;
 
 .#{$scrollTopName}-exit-active {
     transform: translateY(-100%);
-    transition: transform 0.6s ease;
+    transition: transform 0.4s ease;
 }

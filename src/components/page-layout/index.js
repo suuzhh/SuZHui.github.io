@@ -19,7 +19,6 @@ function PageLayout({ children }) {
       headerRef.current && headerRef.current.hide();
     } else {
       // Show header
-      console.log(1)
       headerRef.current && headerRef.current.show();
     }
   };

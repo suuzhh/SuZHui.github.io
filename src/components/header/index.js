@@ -34,7 +34,7 @@ const Header = forwardRef((_, ref) => {
   }));
 
   return (
-    <CSSTransition in={visible} timeout={600} classNames='scroll-top'>
+    <CSSTransition in={visible} timeout={400} classNames='scroll-top'>
       <header className='fixed top-0 left-0 right-0 w-100 z-9999 bg-white overflow-hidden shadow-2 pv1'>
         <Container justify='space-between'>
           <Link to='/' className='link dark-gray'>
