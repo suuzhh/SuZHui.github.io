@@ -6,7 +6,7 @@ import ListItem from '../components/list-item';
 const TagsPage = ({ pageContext, data }) => {
   const { tag } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
-  console.log(tag, data);
+
   return (
     <PageLayout>
       <div className='w-100'>
@@ -17,10 +17,10 @@ const TagsPage = ({ pageContext, data }) => {
         
         <>
           {edges.map(({ node }) => {
-            const { title, date, excerpt } = node.frontmatter;
+            const { title, date, excerpt, path } = node.frontmatter;
             return (
               <ListItem 
-                path={ node.id }
+                path={ path }
                 title={title}
                 date={date}
                 excerpt={excerpt}

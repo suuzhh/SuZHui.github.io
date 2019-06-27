@@ -6,7 +6,6 @@
 
 // You can delete this file if you're not using it
 const path = require('path');
-const format = require('./src/utils/format');
 
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions;
@@ -40,7 +39,7 @@ exports.createPages = ({ actions, graphql }) => {
 			console.log(node)
 			// node.frontmatter.path
 			createPage({
-				path: node.id,
+				path: node.frontmatter.path,
 				component: blogPostTemplate,
 				context: {},
 			})

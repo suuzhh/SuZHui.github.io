@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
               key={id}
               title={frontmatter.title}
               date={frontmatter.date}
-              path={id}
+              path={frontmatter.path}
               excerpt={frontmatter.excerpt}
             />
           );

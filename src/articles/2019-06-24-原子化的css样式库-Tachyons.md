@@ -1,5 +1,5 @@
 ---
-path: "/article/use-tachyons-lib"
+path: "/article/02B5F03EF76E95B3"
 date: "2019-06-24"
 title: "原子化的css样式库-Tachyons"
 excerpt: "使用tachyons代替css module"
