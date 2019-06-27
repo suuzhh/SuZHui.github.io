@@ -41,9 +41,9 @@ const Header = forwardRef((_, ref) => {
             <h2 className='f5 normal'>{title}</h2>
           </Link>
           <div>
-            <button>
+            <Link to='/tags/' className='link dark-gray'>
               <Icon name={ICON_SEARCH} />
-            </button>
+            </Link>
           </div>
         </Container>
       </header>

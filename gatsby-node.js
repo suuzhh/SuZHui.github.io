@@ -6,10 +6,12 @@
 
 // You can delete this file if you're not using it
 const path = require('path');
+const format = require('./src/utils/format');
 
 exports.createPages = ({ actions, graphql }) => {
-    const { createPage } = actions
-    const blogPostTemplate = path.resolve(`src/template/blog-post.js`)
+    const { createPage } = actions;
+	const blogPostTemplate = path.resolve(`src/template/blog-post.js`);
+	const tagsPageTemplate = path.resolve('src/template/tags-page.js');
 
     return graphql(`
 		{
@@ -20,23 +22,46 @@ exports.createPages = ({ actions, graphql }) => {
 				edges {
 					node {
 						frontmatter {
-						path
+							path
+							tags
 						}
+						id
 					}
 				}
 			}
 		}
 	`).then(result => {
         if (result.errors) {
-            return Promise.reject(result.errors)
+            return Promise.reject(result.errors);
 		}
-		result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+		const posts = result.data.allMarkdownRemark.edges
+
+		posts.forEach(({ node }) => {
 			console.log(node)
+			// node.frontmatter.path
 			createPage({
-				path: node.frontmatter.path,
+				path: node.id,
 				component: blogPostTemplate,
 				context: {},
 			})
-		})
+		});
+
+		let tags = [];
+		posts.forEach(p => {
+			if (p.node.frontmatter.tags) {
+				tags = tags.concat(p.node.frontmatter.tags);
+			}
+		});
+
+		tags = Array.from(new Set(tags));
+		tags.forEach(tag => {
+			createPage({
+				path: `/tags/${tag.toLowerCase()}/`,
+				component: tagsPageTemplate,
+				context: {
+					tag
+				}
+			})
+		});
     })
 }

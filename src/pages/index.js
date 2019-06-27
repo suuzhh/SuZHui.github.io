@@ -1,6 +1,7 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import PageLayout from "../components/page-layout";
+import ListItem from '../components/list-item';
 
 const IndexPage = ({ data }) => {
   const remarkList = data.allMarkdownRemark.edges;
@@ -10,17 +11,13 @@ const IndexPage = ({ data }) => {
         {remarkList.map(item => {
           const { id, frontmatter } = item.node;
           return (
-            <Link
-              className='db link silver w-100 mb2 pv2 bb b--black-20'
+            <ListItem 
               key={id}
-              to={frontmatter.path}
-            >
-              <div className='flex-ns justify-between items-center mb2'>
-                <h4 className='orange f5'>{frontmatter.title}</h4>
-                <span className='f7'>{frontmatter.date}</span>
-              </div>
-              <p className='f7'>{frontmatter.excerpt}</p>
-            </Link>
+              title={frontmatter.title}
+              date={frontmatter.date}
+              path={id}
+              excerpt={frontmatter.excerpt}
+            />
           );
         })}
       </>

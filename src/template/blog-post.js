@@ -6,6 +6,7 @@ import PageLayout from "../components/page-layout";
 
 export default function Template({ data }) {
   const { markdownRemark: post, site } = data;
+  console.log(data)
   return (
     <PageLayout>
       <Helmet title={`${site.siteMetadata.title} - ${post.frontmatter.title}`} />
@@ -16,8 +17,8 @@ export default function Template({ data }) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query BlogPostByPath($id: String) {
+    markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
