@@ -6,7 +6,7 @@ import PageLayout from "../components/page-layout";
 
 export default function Template({ data }) {
   const { markdownRemark: post, site } = data;
-  console.log(data);
+
   return (
     <PageLayout>
       <Helmet
