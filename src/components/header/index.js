@@ -1,9 +1,8 @@
 import React, { forwardRef, useImperativeHandle, useState } from "react";
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition } from "react-transition-group";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import Container from "../container";
 import Icon, { ICON_SEARCH } from "../icon";
-
 
 const Header = forwardRef((_, ref) => {
   const data = useStaticQuery(graphql`
@@ -17,8 +16,8 @@ const Header = forwardRef((_, ref) => {
   `);
 
   const { title } = data.site.siteMetadata;
-  
-  const [ visible, handleVisible ] = useState(true);
+
+  const [visible, handleVisible] = useState(true);
   // 暴露出的组件函数
   useImperativeHandle(ref, () => ({
     show() {
@@ -30,7 +29,7 @@ const Header = forwardRef((_, ref) => {
       if (visible === true) {
         handleVisible(false);
       }
-    }
+    },
   }));
 
   return (

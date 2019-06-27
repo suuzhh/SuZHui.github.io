@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import PageLayout from '../components/page-layout';
-import ListItem from '../components/list-item';
+import PageLayout from "../components/page-layout";
+import ListItem from "../components/list-item";
 
 const TagsPage = ({ pageContext, data }) => {
   const { tag } = pageContext;
@@ -11,24 +11,23 @@ const TagsPage = ({ pageContext, data }) => {
     <PageLayout>
       <div className='w-100'>
         <div className='flex items-center justify-between w-100 silver mb2'>
-          <h2 className='f6'>标签: { tag.toUpperCase() }</h2>
-          <span className='f7'>共{ totalCount }篇文章</span>
+          <h2 className='f6'>标签: {tag.toUpperCase()}</h2>
+          <span className='f7'>共{totalCount}篇文章</span>
         </div>
-        
+
         <>
           {edges.map(({ node }) => {
             const { title, date, excerpt, path } = node.frontmatter;
             return (
-              <ListItem 
-                path={ path }
+              <ListItem
+                path={path}
                 title={title}
                 date={date}
                 excerpt={excerpt}
-                key={ node.id }
+                key={node.id}
               />
-            )
-          })
-          }
+            );
+          })}
         </>
       </div>
     </PageLayout>

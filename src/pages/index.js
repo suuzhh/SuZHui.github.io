@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import PageLayout from "../components/page-layout";
-import ListItem from '../components/list-item';
+import ListItem from "../components/list-item";
 
 const IndexPage = ({ data }) => {
   const remarkList = data.allMarkdownRemark.edges;
@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
         {remarkList.map(item => {
           const { id, frontmatter } = item.node;
           return (
-            <ListItem 
+            <ListItem
               key={id}
               title={frontmatter.title}
               date={frontmatter.date}
