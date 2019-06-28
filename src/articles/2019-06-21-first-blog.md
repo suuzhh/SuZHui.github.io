@@ -10,7 +10,7 @@ excerpt: "使用gatsby构建个人博客"
 3. 加入文章分类
 
 ```
-    var a = '1';
+    var a = '测试travis';
 ```
 
 [Google](http://www.google.com/)
