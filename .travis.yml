@@ -7,5 +7,17 @@ node_js:
 cache: yarn
 install:
   - yarn install
-script:
-  - npm run deploy
+
+before_deploy:
+  - npm run build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: dev
+  local_dir: public
+  target_branch: master
+  email: szh@travis-ci.org
+  name: 'suzh'
