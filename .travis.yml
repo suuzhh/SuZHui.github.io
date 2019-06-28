@@ -1,0 +1,11 @@
+language: node_js
+branches:
+  only:
+  - dev
+node_js:
+  - "10.15.3"
+cache: yarn
+install:
+  - yarn install
+script:
+  - npm run deploy
