@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: 'blog-icon';  /* project id 1257231 */
-    src: url('https://at.alicdn.com/t/font_1257231_c8768ngouaw.eot');
-    src: url('https://at.alicdn.com/t/font_1257231_c8768ngouaw.eot?#iefix') format('embedded-opentype'),
-    url('https://at.alicdn.com/t/font_1257231_c8768ngouaw.woff2') format('woff2'),
-    url('https://at.alicdn.com/t/font_1257231_c8768ngouaw.woff') format('woff'),
-    url('https://at.alicdn.com/t/font_1257231_c8768ngouaw.ttf') format('truetype'),
-    url('https://at.alicdn.com/t/font_1257231_c8768ngouaw.svg#blog-icon') format('svg');
+    src: url('https://at.alicdn.com/t/font_1257231_h98swvb4mt8.eot');
+    src: url('https://at.alicdn.com/t/font_1257231_h98swvb4mt8.eot?#iefix') format('embedded-opentype'),
+    url('https://at.alicdn.com/t/font_1257231_h98swvb4mt8.woff2') format('woff2'),
+    url('https://at.alicdn.com/t/font_1257231_h98swvb4mt8.woff') format('woff'),
+    url('https://at.alicdn.com/t/font_1257231_h98swvb4mt8.ttf') format('truetype'),
+    url('https://at.alicdn.com/t/font_1257231_h98swvb4mt8.svg#blog-icon') format('svg');
 }
 
 .icon {
@@ -20,7 +20,13 @@
     // 查询
     &.search {
         &:before {
-            content: "\e6c8"
+            content: "\e6c8";
+        }
+    }
+    // 箭头（向上）
+    &.back-top {
+        &:before {
+            content: "\e655";
         }
     }
 }

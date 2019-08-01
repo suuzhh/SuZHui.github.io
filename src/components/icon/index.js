@@ -13,3 +13,4 @@ function Icon({ name = "", size = 22, color = "" }) {
 export default Icon;
 
 export const ICON_SEARCH = `${style.icon} ${style.search}`;
+export const ICON_BACK_TOP = `${style.icon} ${style.backTop}`;

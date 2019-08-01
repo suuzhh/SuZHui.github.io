@@ -1,70 +1,123 @@
-@import url('https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css');
-@import './theme.scss';
+@import url("https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css");
+@import "./theme.scss";
 
 * {
-    margin: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    padding-inline-start: 0;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
 }
 html {
-    background-color: white;
-    font: $fontSize4/1.45 'Open Sans',sans-serif;
-    font-size: $fontSize4;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+  background-color: white;
+  font: $fontSize4/1.45 "Open Sans", sans-serif;
+  font-size: $fontSize4;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 
-    // h1 { @include H(1); }
-    // h2 { @include H(2); }
-    // h3 { @include H(3); }
-    // h4 { @include H(4); }
-    // h5 { @include H(5); }
-    // h6 { @include H(6); }
+  // h1 { @include H(1); }
+  // h2 { @include H(2); }
+  // h3 { @include H(3); }
+  // h4 { @include H(4); }
+  // h5 { @include H(5); }
+  // h6 { @include H(6); }
 }
 div {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-input, button {
+input,
+button {
+  border: none;
+  background: transparent;
+  &:focus {
     border: none;
-    background: transparent;
-    &:focus {
-        border: none;
-        outline: none;
-    }
+    outline: none;
+  }
 }
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 // animation
 $scrollTopName: scroll-top;
 .#{$scrollTopName}-enter {
-    transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
 .#{$scrollTopName}-enter-done {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .#{$scrollTopName}-enter-active {
-    transform: translateY(0);
-    transition: transform 0.4s ease;
+  transform: translateY(0);
+  transition: transform 0.4s ease;
 }
 
 .#{$scrollTopName}-exit {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .#{$scrollTopName}-exit-done {
-    transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
 .#{$scrollTopName}-exit-active {
-    transform: translateY(-100%);
-    transition: transform 0.4s ease;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+$slide: slide-right;
+.#{$slide}-enter {
+  transform: translateX(-100%);
+}
+
+.#{$slide}-enter-done {
+  transform: translateX(0);
+}
+
+.#{$slide}-enter-active {
+  transform: translateX(0);
+  transition: transform 0.5s ease-in;
+}
+
+.#{$slide}-exit {
+  transform: translateY(0);
+}
+
+.#{$slide}-exit-done {
+  transform: translateX(-100%);
+}
+
+.#{$slide}-exit-active {
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-out;
+}
+
+.animation-slide {
+  animation: slide ease 4s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  animation-play-state: running;
+}
+.animation-slide:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
 }

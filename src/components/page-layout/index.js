@@ -1,6 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Header from "../header";
 import Container from "../container";
+import BackTopButton from "../back-top-button";
 
 function PageLayout({ children }) {
   const style = {
@@ -11,9 +12,11 @@ function PageLayout({ children }) {
 
   const wrapperRef = useRef(null);
   const headerRef = useRef(null);
+  const backTopRef = useRef(null);
 
-  const handleHeaderVisible = e => {
-    const distance = e.target.scrollTop;
+  const [wrapperHeight, setWrapperHeigt] = useState(0);
+
+  const handleHeaderVisible = (distance = 0) => {
     if (distance > 70) {
       // Hide header
       headerRef.current && headerRef.current.hide();
@@ -23,11 +26,31 @@ function PageLayout({ children }) {
     }
   };
 
+  const handleBackButtonVisible = (distance = 0) => {
+    // 滚动 1/3屏就显示返回按钮
+    if (distance > wrapperHeight * 0.3) {
+      backTopRef.current && backTopRef.current.show();
+    } else {
+      backTopRef.current && backTopRef.current.hide();
+    }
+  }
+
+  const handleBackTop = (_) => {
+    wrapperRef.current.scrollTo(0, 0);
+  }
+
+  const scrollEventHandle = e => {
+    const distance = e.target.scrollTop;
+    handleHeaderVisible(distance);
+    handleBackButtonVisible(distance);
+  };
+
   useEffect(() => {
     if (wrapperRef.current) {
-      wrapperRef.current.addEventListener("scroll", handleHeaderVisible);
+      setWrapperHeigt(wrapperRef.current.offsetHeight);
+      wrapperRef.current.addEventListener("scroll", scrollEventHandle);
       return () => {
-        wrapperRef.current.removeEventListener("scroll", handleHeaderVisible);
+        wrapperRef.current.removeEventListener("scroll", scrollEventHandle);
       };
     }
   });
@@ -43,6 +66,10 @@ function PageLayout({ children }) {
       <div className='pv3 mt4'>
         <Container direction='column'>{children}</Container>
       </div>
+      <BackTopButton 
+        ref={backTopRef}
+        onButtonClick={handleBackTop}
+      />
     </div>
   );
 }
