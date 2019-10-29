@@ -63,7 +63,7 @@ function PageLayout({ children }) {
     >
       <Header ref={headerRef}></Header>
 
-      <div className='pv3 mt4'>
+      <div className='pv3 mt3 ph2'>
         <Container direction='column'>{children}</Container>
       </div>
       <BackTopButton 
