@@ -14,19 +14,19 @@ const TagsPage = ({
   return (
     <PageLayout>
       <Helmet title={title} />
-      <div className='w-100'>
-        <h2 className='f6 normal mb2 gray'>TAGS</h2>
+      <div className='w-100 mt2'>
+        {/* <h2 className='f7 normal mb2 gray'>TAGS</h2> */}
         <ul className='list flex flex-wrap'>
           {group.map(tag => {
             const color = randomColor();
             return (
               <li
                 key={tag.fieldValue}
-                className={`br2 ba b--${color} hover-bg-${color} bg-animate ma2`}
+                className={`br1 ba b--${color} hover-bg-${color} bg-animate ma1`}
               >
                 <Link
                   to={`/tags/${tag.fieldValue.toLowerCase()}/`}
-                  className={`link ph2 pv1 db f7 hover-white ${color} normal`}
+                  className={`link ph2 pv1 db f8 hover-white ${color} normal`}
                 >
                   {tag.fieldValue.toUpperCase()}&nbsp;({tag.totalCount})
                 </Link>

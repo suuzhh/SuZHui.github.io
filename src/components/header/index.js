@@ -34,10 +34,10 @@ const Header = forwardRef((_, ref) => {
 
   return (
     <CSSTransition in={visible} timeout={400} classNames='scroll-top'>
-      <header className='fixed top-0 left-0 right-0 w-100 z-9999 bg-white overflow-hidden shadow-2 pv1'>
+      <header className='fixed top-0 left-0 right-0 w-100 z-9999 bg-white overflow-hidden shadow-2 pv1 ph2'>
         <Container justify='space-between'>
           <Link to='/' className='link orange'>
-            <h2 className='f6 normal ph2'>{title}</h2>
+            <h2 className='f6 normal'>{title}</h2>
           </Link>
           <div>
             <Link to='/tags/' className='link orange'>

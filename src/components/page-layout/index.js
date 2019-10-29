@@ -3,13 +3,9 @@ import Header from "../header";
 import Container from "../container";
 import BackTopButton from "../back-top-button";
 
-function PageLayout({ children }) {
-  const style = {
-    width: "100vw",
-    height: "100vh",
-    WebkitOverflowScrolling: "touch",
-  };
+import style from './page-layout.module.scss';
 
+function PageLayout({ children }) {
   const wrapperRef = useRef(null);
   const headerRef = useRef(null);
   const backTopRef = useRef(null);
@@ -58,8 +54,7 @@ function PageLayout({ children }) {
   return (
     <div
       ref={wrapperRef}
-      style={style}
-      className='overflow-y-scroll absolute absolute--fill'
+      className={`overflow-hidden absolute absolute--fill ${style.pageLayout}`}
     >
       <Header ref={headerRef}></Header>
 

@@ -10,11 +10,10 @@ const TagsPage = ({ pageContext, data }) => {
   return (
     <PageLayout>
       <div className='w-100'>
-        <div className='flex items-center justify-between w-100 silver mb2'>
-          <h2 className='f6'>标签: {tag.toUpperCase()}</h2>
-          <span className='f7'>共{totalCount}篇文章</span>
+        <div className='flex items-center justify-between w-100 silver mb1 mt2'>
+          <h2 className='f7 fw4'>标签: {tag.toUpperCase()}</h2>
+          <span className='f8'>共{totalCount}篇文章</span>
         </div>
-
         <>
           {edges.map(({ node }) => {
             const { title, date, excerpt, path } = node.frontmatter;

@@ -8,7 +8,7 @@ function Container({ children, direction = "row", justify = "start" }) {
   };
 
   return (
-    <div className='center pa1 flex w-100 w-60-ns' style={containerStyle}>
+    <div className='center pv1 ph2 flex w-100 w-60-ns' style={containerStyle}>
       {children}
     </div>
   );
