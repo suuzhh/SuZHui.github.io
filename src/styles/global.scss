@@ -98,13 +98,10 @@ $slide: slide-right;
 }
 
 .animation-slide {
-  animation: slide ease 4s;
+  animation: slide ease 3.4s;
   animation-iteration-count: infinite;
   transform-origin: 50% 50%;
   animation-play-state: running;
-}
-.animation-slide:hover {
-  animation-play-state: paused;
 }
 
 @keyframes slide {
@@ -114,11 +111,11 @@ $slide: slide-right;
   }
   40% {
     opacity: 1;
-    transform: translateY(-5px);
+    transform: translateY(-2px);
   }
   100% {
     opacity: 1;
-    transform: translateY(-5px);
+    transform: translateY(-2px);
   }
 }
 

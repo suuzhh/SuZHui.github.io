@@ -19,12 +19,15 @@ const BackTopButton = forwardRef(({ onButtonClick }, ref) => {
     }))
 
     return (
-        visible ?   
-            <div className='animation-slide dn db-ns pointer br-100 fixed right-2 bottom-2 link orange mb4'
-                onClick={onButtonClick}
+        visible ?
+            <div className='dn db-ns pa2 pb1 pointer br-100 fixed right-2 bottom-2 mb4 shadow-1 flex items-center justify-center'
             >
-                <Icon size={26} name={`${ICON_BACK_TOP}`}/>
-            </div>
+                <div className='animation-slide orange link'
+                    onClick={onButtonClick}
+                >
+                    <Icon size={26} name={`${ICON_BACK_TOP}`}/>
+                </div>
+            </div> 
             : null
     );
 });
