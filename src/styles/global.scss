@@ -70,6 +70,35 @@ $scrollTopName: scroll-top;
   transition: transform 0.4s ease;
 }
 
+$fadeName: fade;
+.#{$fadeName}-enter {
+  opacity: 0;
+}
+
+.#{$fadeName}-enter-done {
+  opacity: 1;
+  display: inherit;
+}
+
+.#{$fadeName}-enter-active {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.#{$fadeName}-exit {
+  opacity: 1;
+}
+
+.#{$fadeName}-exit-done {
+  opacity: 0;
+  display: none;
+}
+
+.#{$fadeName}-exit-active {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
 $slide: slide-right;
 .#{$slide}-enter {
   transform: translateX(-100%);
