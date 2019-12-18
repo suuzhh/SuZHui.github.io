@@ -123,4 +123,4 @@ useState(STATE.DOING)
 
 ## 写在最后
 
-目前Vue（2.x）与TS的契合度不够好，如果只是练手不建议直接在生产中使用。Vue 3.x出来之后将会更好的支持TS（尤小佑说的），可以在3.x出来前在自己的小项目里多玩玩`TS` 和 `React hooks` ![真香警告](https://user-gold-cdn.xitu.io/2018/7/22/164c239582fb860f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+目前Vue（2.x）与TS的契合度不够好，如果只是练手不建议直接在生产中使用。Vue 3.x出来之后将会更好的支持TS（尤小佑说的），可以在3.x出来前在自己的小项目里多玩玩`TS` 和 `React hooks` 。
