@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+styleimport React, { useRef, useEffect, useState, useCallback } from "react";
 import Header from "../header";
 import Container from "../container";
 import BackTopButton from "../back-top-button";
@@ -12,7 +12,7 @@ function PageLayout({ children }) {
 
   const [wrapperHeight, setWrapperHeigt] = useState(0);
 
-  const handleHeaderVisible = (distance = 0) => {
+  const handleHeaderVisible = useCallback((distance = 0) => {
     if (distance > 70) {
       // Hide header
       headerRef.current && headerRef.current.hide();
@@ -20,36 +20,40 @@ function PageLayout({ children }) {
       // Show header
       headerRef.current && headerRef.current.show();
     }
-  };
+  }, []);
 
-  const handleBackButtonVisible = (distance = 0) => {
+  const handleBackButtonVisible = useCallback((distance = 0) => {
     // 滚动 1/3屏就显示返回按钮
     if (distance > wrapperHeight * 0.3) {
       backTopRef.current && backTopRef.current.show();
     } else {
       backTopRef.current && backTopRef.current.hide();
     }
-  }
+  }, [wrapperHeight])
 
-  const handleBackTop = (_) => {
+  const handleBackTop = useCallback(() => {
     wrapperRef.current.scrollTo(0, 0);
-  }
+  }, []);
 
-  const scrollEventHandle = e => {
-    const distance = e.target.scrollTop;
-    handleHeaderVisible(distance);
-    handleBackButtonVisible(distance);
-  };
+  const scrollEventHandle = useCallback(
+    e => {
+      const distance = e.target.scrollTop;
+      handleHeaderVisible(distance);
+      handleBackButtonVisible(distance);
+    },
+    [handleHeaderVisible, handleBackButtonVisible]
+  );
 
   useEffect(() => {
-    if (wrapperRef.current) {
-      setWrapperHeigt(wrapperRef.current.offsetHeight);
-      wrapperRef.current.addEventListener("scroll", scrollEventHandle);
+    const ref = wrapperRef.current
+    if (ref) {
+      setWrapperHeigt(ref.offsetHeight);
+      ref.addEventListener("scroll", scrollEventHandle);
       return () => {
-        wrapperRef.current.removeEventListener("scroll", scrollEventHandle);
+        ref.removeEventListener("scroll", scrollEventHandle);
       };
     }
-  });
+  }, [scrollEventHandle]);
 
   return (
     <div

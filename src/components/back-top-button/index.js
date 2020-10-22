@@ -28,6 +28,9 @@ const BackTopButton = forwardRef(({ onButtonClick }, ref) => {
 			>
 				<div className='animation-slide orange link'
 					onClick={onButtonClick}
+					onKeyDown={onButtonClick}
+					tabindex="0"
+					role="button"
 				>
 					<Icon size={26} name={`${ICON_BACK_TOP}`}/>
 				</div>
