@@ -1,4 +1,4 @@
-styleimport React, { useRef, useEffect, useState, useCallback } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import Header from "../header";
 import Container from "../container";
 import BackTopButton from "../back-top-button";
