@@ -6,8 +6,21 @@ const postsDirectory = path.join(process.cwd(), 'src/posts');
 
 export interface PostMetaModel {
   id: string;
+  /** 转换为字符串与字符的唯一标识 */
+  slug: string;
   title: string;
   date: string;
+  /** 大图 */
+  mainImage?: {
+    blurDataURL: string;
+    alt?: string;
+  };
+
+  /** 文章摘要 */
+  excerpt: string;
+
+  /** 分类列表 */
+  categories: string[];
 }
 
 export function getSortedPostsData() {

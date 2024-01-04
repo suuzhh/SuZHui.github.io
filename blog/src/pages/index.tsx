@@ -2,6 +2,7 @@
 import Container from '@/components/container';
 import { type PostMetaModel, getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
+import PostList from '@/components/postlist';
 
 type HomeProps = {
   posts: PostMetaModel[];
@@ -13,14 +14,16 @@ function HomePage({ posts }: HomeProps) {
       {posts && (
         <Container>
           <div className="grid gap-10 md:grid-cols-2 lg:gap-10 ">
-            {/* {posts.slice(0, 2).map(post => (
+            {posts.slice(0, 2).map(post => (
               <PostList
-                key={post._id}
+                key={post.id}
                 post={post}
                 aspect="landscape"
                 preloadImage={true}
+                minimal={true}
+                fontSize="large"
               />
-            ))} */}
+            ))}
           </div>
           <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3 ">
             {/* {posts.slice(2, 14).map(post => (
