@@ -1,7 +1,12 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
 import PageLayout from "../components/page-layout";
+
+function Head({ title }) {
+  return (
+    <title>{title}</title>
+  )
+}
 
 const TagsPage = ({
   data: {
@@ -13,7 +18,7 @@ const TagsPage = ({
 }) => {
   return (
     <PageLayout>
-      <Helmet title={title} />
+      <Head title={title} />
       <div className='w-100 mt2'>
         {/* <h2 className='f7 normal mb2 gray'>TAGS</h2> */}
         <ul className='list flex flex-wrap'>
@@ -49,7 +54,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(limit: 1000) {
-      group(field: frontmatter___tags) {
+      group(field: { frontmatter: { tags: SELECT } }) {
         fieldValue
         totalCount
       }

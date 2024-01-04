@@ -3,7 +3,7 @@ import Header from "../header";
 import Container from "../container";
 import BackTopButton from "../back-top-button";
 
-import style from './page-layout.module.scss';
+// import style from './page-layout.module.scss';
 
 function PageLayout({ children }) {
   const wrapperRef = useRef(null);
@@ -58,14 +58,14 @@ function PageLayout({ children }) {
   return (
     <div
       ref={wrapperRef}
-      className={`overflow-hidden absolute absolute--fill ${style.pageLayout}`}
+      className={`overflow-hidden absolute absolute--fill page-layout`}
     >
       <Header ref={headerRef}></Header>
 
       <div className='pv3 mt3 ph2'>
         <Container direction='column'>{children}</Container>
       </div>
-      <BackTopButton 
+      <BackTopButton
         ref={backTopRef}
         onButtonClick={handleBackTop}
       />
