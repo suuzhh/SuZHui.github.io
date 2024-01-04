@@ -1,0 +1,1 @@
+export const cx = (...classNames: (string | boolean)[]) => classNames.filter(Boolean).join(' ')
